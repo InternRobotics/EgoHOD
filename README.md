@@ -1,5 +1,4 @@
 # EgoHOD
-# EgoHOD
 
 This repo is the official implementation of EgoHOD at ICLR 2025
 
@@ -10,6 +9,7 @@ This repo is the official implementation of EgoHOD at ICLR 2025
 <div align="center">
 <img src="assets/teaser.png">
 </div>
+
 ## Todo
 
 - [x] HOD data released
