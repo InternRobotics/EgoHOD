@@ -1,0 +1,32 @@
+_base_: '../default_clip_large.yml'
+data:
+  dataset: ego4d_htego
+  # ego4d_root: pssd:s3://ego4d/all_videos_fps30_short320_chunked/
+  ego4d_root: cluster1:s3://videos/ego4d/videos_short320_chunked_15s/
+  ego4d_metadata: /mnt/petrelfs/peibaoqi/robot/annotation/ego4d_new_recaption_final.csv
+
+  egoexo4d_root: cluster1:s3://howto_ego/htm370k_cooking_clips_15s_short256/
+  # egoexo4d_metadata: /mnt/petrelfs/xujilan/data/howto100/Howto-Interlink7M/Howto-Interlink-cookingclips.csv
+  egoexo4d_metadata: /mnt/petrelfs/share_data/xujilan/avion_metadata/Howto-Interlink-egoonly_egolabel.csv
+  howto_metadata: /mnt/petrelfs/share_data/xujilan/annotations/howto100m/Howto-Interlink-egoonly_egolabel.csv
+  clip_length: 4
+  clip_stride: 16
+  
+
+train:
+  task: vlp
+  batch_size: 8
+  epochs: 15
+  lr: 1e-5
+  fix_lr: true
+
+
+model:
+  name: CLIP_VITL14_336PX
+  ckpt_path: /mnt/petrelfs/peibaoqi/robot/mae/ckpt/ViT-L-14-336px.pt
+  lavila_path: /mnt/petrelfs/peibaoqi/AVION/clip_ckpt/avion_pretrain_lavila_vitb
+wandb: true
+resume: /mnt/petrelfs/peibaoqi/robot/mae/ckpt/large_best.pt
+output_dir: /mnt/petrelfs/peibaoqi/exps/avion_large/
+use_eva: False
+use_bert: False
