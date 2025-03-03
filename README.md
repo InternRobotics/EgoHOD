@@ -3,8 +3,8 @@
 This repo is the official implementation of EgoHOD at ICLR 2025
 
 > **["Modeling Fine-Grained Hand-Object Dynamics for Egocentric Video Representation Learning"](https://openreview.net/forum?id=P6G1Z6jkf3)**<br>
-> [Baoqi Pei](https://scholar.google.com/citations?user=sTCkd54AAAAJ), [Yifei Huang](https://scholar.google.com/citations?user=RU8gNcgAAAAJ), [Jilan Xu](https://scholar.google.com/citations?user=mf2U64IAAAAJ), [Guo Chen](https://scholar.google.com/citations?user=lRj3moAAAAAJ), yuping He, Lijin Yang,<br> 
-> [YaLi Wang](https://scholar.google.com/citations?user=hD948dkAAAAJ), [Weidi Xie](https://scholar.google.com/citations?user=Vtrqj4gAAAAJ), [Yu Qiao](https://scholar.google.com/citations?user=gFtI-8QAAAAJ), [Fei Wu](https://scholar.google.com/citations?user=XJLn4MYAAAAJ), [Limin Wang](https://scholar.google.com/citations?user=HEuN8PcAAAAJ)<br>
+> [Baoqi Pei](https://scholar.google.com/citations?user=sTCkd54AAAAJ), [Yifei Huang](https://scholar.google.com/citations?user=RU8gNcgAAAAJ), [Jilan Xu](https://scholar.google.com/citations?user=mf2U64IAAAAJ), [Guo Chen](https://scholar.google.com/citations?user=lRj3moAAAAAJ), Yuping He, [Lijin Yang](https://scholar.google.com/citations?user=ppR-rpkAAAAJ),<br> 
+> [Yali Wang](https://scholar.google.com/citations?user=hD948dkAAAAJ), [Weidi Xie](https://scholar.google.com/citations?user=Vtrqj4gAAAAJ), [Yu Qiao](https://scholar.google.com/citations?user=gFtI-8QAAAAJ), [Fei Wu](https://scholar.google.com/citations?user=XJLn4MYAAAAJ), [Limin Wang](https://scholar.google.com/citations?user=HEuN8PcAAAAJ)<br>
 
 <div align="center">
 <img src="assets/teaser.png">
@@ -12,18 +12,18 @@ This repo is the official implementation of EgoHOD at ICLR 2025
 
 ## Todo
 
-- [x] HOD data released
-- [x] Pretrained code released
-- [ ] Finetuned code released
-- [x] Pretrained model checkpoints
-- [ ] Finetuned model checkpoints
-- [x] Evaluation code released
+- [x] HOD data release
+- [x] Pretrained code release
+- [ ] Finetuned code release
+- [x] Pretrained model checkpoints release
+- [ ] Finetuned model checkpoints release
+- [x] Evaluation code release
 
 ## Introduction
 
-In egocentric video understanding, the motion of hands and objects as well as their interactions play a significant role by nature.However, existing egocentric video representation learning methods mainly focus on aligning video representation with high-level narrations, overlooking the intricate dynamics between hands and objects.In this work, we aim to integrate the modeling of fine-grained hand-object dynamics into the video representation learning process.
+In egocentric video understanding, the motion of hands and objects as well as their interactions play a significant role by nature. However, existing egocentric video representation learning methods mainly focus on aligning video representation with high-level narrations, overlooking the intricate dynamics between hands and objects. In this work, we aim to integrate the modeling of fine-grained hand-object dynamics into the video representation learning process.
 Since no suitable data is available, we introduce HOD, a novel pipeline employing a hand-object detector and a large language model to generate high-quality narrations with detailed descriptions of hand-object dynamics. 
-To learn these fine-grained dynamics, we propose EgoVideo, a model with a new lightweight motion adapter to capture fine-grained hand-object motion information. Through our co-training strategy, EgoVideo effectively and efficiently leverages the fine-grained hand-object dynamics in the HOD data. Extensive experiments demonstrate that our method achieves state-of-the-art performance across multiple egocentric downstream tasks, including improvements of 6.3\% in EK-100 multi-instance retrieval, 5.7\% in EK-100 classification, and 16.3\% in EGTEA classification in zero-shot settings. Furthermore, our model exhibits robust generalization capabilities in hand-object interaction and robot manipulation tasks.
+To learn these fine-grained dynamics, we propose EgoVideo, a model with a new lightweight motion adapter to capture fine-grained hand-object motion information. Through our co-training strategy, EgoVideo effectively and efficiently leverages the fine-grained hand-object dynamics in the HOD data. Extensive experiments demonstrate that our method achieves state-of-the-art performance across multiple egocentric downstream tasks, including improvements of 6.3% in EK-100 multi-instance retrieval, 5.7% in EK-100 classification, and 16.3% in EGTEA classification in zero-shot settings. Furthermore, our model exhibits robust generalization capabilities in hand-object interaction and robot manipulation tasks.
 
 <div align="center">
 <img src="assets/method.png">
@@ -44,7 +44,7 @@ You can get our HOD annotations from this [Huggingface link](https://huggingface
 
 ## Pretraining
 
-For training EgoVideo model without adapter, you can simply run as follows:
+For training EgoVideo model without adapter, you can simply run the following code:
 ```shell
 bash ./exps/pretrain.sh
 ```
@@ -66,7 +66,7 @@ For zero-shot evaluation, you can simply run the scripts in `exps` as follows:
 ```shell
 bash exps/eval_ekcls.sh
 ```
-We provide the evaluation code for EK100-MIR, EK100-CLS, EGTEA and EGOMCQ.
+We provide the evaluation code for EK100-MIR, EK100-CLS, EGTEA, and EGOMCQ.
 ## Cite
 
 If you find this repository useful, please use the following BibTeX entry for citation.
