@@ -32,7 +32,7 @@ To learn these fine-grained dynamics, we propose EgoVideo, a model with a new li
 
 ## Installation
 ```
-git clone https://github.com/OpenGVLab/vinci.git
+https://github.com/OpenRobotLab/EgoHOD.git
 conda env create -f environment.yml
 conda activate hod
 pip install -r requirements.txt
@@ -40,7 +40,7 @@ pip install -r requirements.txt
 
 ## Datasets
 
-You can get our HOD annotations from this [Huggingface link](https://huggingface.co/Jazzcharles/EgoInstructor-ModelZoo/blob/main/retrieval_checkpoint_best.pt).
+You can get our HOD annotations from this [Huggingface link](https://huggingface.co/datasets/Jazzcharles/EgoHOD).
 
 ## Pretraining
 
@@ -55,6 +55,11 @@ bash ./exps/pretrain.sh
       python main_pretrain.py --config_file configs/clip_base.yml
       ```
 3. For model with Adapter, we will release the pretraining code soon.
+
+
+## Pretrained Model
+
+For our pretrained model, you can download checkpoint from [this link](https://huggingface.co/Jazzcharles/EgoVideo).
 
 ## Finetuning
 
@@ -72,11 +77,11 @@ We provide the evaluation code for EK100-MIR, EK100-CLS, EGTEA, and EGOMCQ.
 If you find this repository useful, please use the following BibTeX entry for citation.
 
 ```latex
-@misc{li2023unmasked,
-      title={Unmasked Teacher: Towards Training-Efficient Video Foundation Models}, 
-      author={Kunchang Li and Yali Wang and Yizhuo Li and Yi Wang and Yinan He and Limin Wang and Yu Qiao},
-      year={2023},
-      eprint={2303.16058},
+@misc{pei2025modeling,
+      title={Modeling Fine-Grained Hand-Object Dynamics for Egocentric Video Representation Learning}, 
+      author={Baoqi Pei, Yifei Huang, Jilan Xu, Guo Chen, Yuping He, Lijin Yang, Yali Wang, Weidi Xie, Yu Qiao, Fei Wu, Limin Wang},
+      year={2025},
+      eprint={2503.00986},
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
