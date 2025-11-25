@@ -14,7 +14,7 @@ This repo is the official implementation of EgoHOD at ICLR 2025
 
 - [x] HOD data release
 - [x] Pretrained code release
-- [ ] Finetuned code release
+- [x] Finetuned code release
 - [x] Pretrained model checkpoints release
 - [ ] Finetuned model checkpoints release
 - [x] Evaluation code release
@@ -63,7 +63,16 @@ For our pretrained model, you can download checkpoint from [this link](https://h
 
 ## Finetuning
 
-We will update the code soon.
+For finetuning EgoVideo model on EK100-MIR, you can simply run the following code:
+```shell
+bash ./exps/ft_mir.sh
+```
+**Notes:**
+1. Modify the yml files in `./configs` before running the scripts.
+2. For training without slurm script, you can simply run 
+      ```shell
+      python main_finetune.py --config_file configs/ft_clip_base.yml
+      ```
 
 ## Zero-shot Evaluation
 
