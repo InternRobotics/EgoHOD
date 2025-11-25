@@ -1,0 +1,43 @@
+_base_: '../default_clip_base.yml'
+data:
+  dataset: ek100_mir
+  root: cluster1:s3://downstream/epic_clips_300s_30fps_short320/
+  #root: pssd:s3://epic/epic_video_320p/
+  metadata: /mnt/hwfile/internvideo/share_data/xujilan/epic_kitchen/EPIC_100_retrieval_train.csv
+  relevancy_path: /mnt/hwfile/internvideo/share_data/xujilan/epic_kitchen/relevancy/caption_relevancy_EPIC_100_retrieval_train.pkl
+  clip_length: 16
+  clip_stride: 4
+  video_chunk_len: 300
+
+  is_trimmed: true
+  fps: 30
+
+train:
+  task: mir
+  batch_size: 32
+  epochs: 100
+  lr: 1e-5
+  fix_lr: false
+  lr_start: 1e-6
+  lr_end: 1e-5
+
+
+model:
+  name: CLIP_VITB16
+  ckpt_path: /mnt/petrelfs/peibaoqi/AVION/clip_ckpt/ViT-B-16.pt
+  freeze_temperature: true
+  lavila_path: dont_use
+wandb: true
+
+resume: pretrain_ckpt_path
+
+output_dir: output/
+use_eva: False
+use_bert: False
+
+
+# fine-grained vision language modeling
+
+# dynamic narrations by LLM
+
+# modeling fine-grained vision language dynamics for Video Representation learning
